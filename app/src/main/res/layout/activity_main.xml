@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/logocontrasparenza"
-    tools:context="com.example.vincenzo.assassinscreedneapolis.MainActivity">
+    tools:context="com.example.vincenzo.assassinscreedneapolis.MainActivity"
+    android:theme="@style/AppTheme">
 
         <LinearLayout
         android:layout_width="match_parent"
@@ -36,13 +37,68 @@
                  android:id="@+id/button"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Button" />
+                 android:text="" />
 
              <Button
                  android:id="@+id/button2"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Button" />
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button3"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button4"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button5"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button6"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button7"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button8"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button9"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button10"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
+             <Button
+                 android:id="@+id/button11"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="" />
+
          </LinearLayout>
         </ScrollView>
     </LinearLayout>

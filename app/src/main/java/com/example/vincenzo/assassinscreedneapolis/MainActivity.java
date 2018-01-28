@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +54,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/1931302960524063/"));
                 startActivity(i);
+            }
+        });
+
+        Button button3 = findViewById(R.id.button3);
+        button3.setText("aclracn@gmail.com");
+
+        Button button4 = findViewById(R.id.button4);
+        button4.setText("acn.soa@gmail.com");
+        Button button5 = findViewById(R.id.button5);
+        button5.setText("acn.soa.background@gmail.com");
+        Button button6 = findViewById(R.id.button6);
+        button6.setText("acn.soa.arbitri@gmail.com");
+        Button button7 = findViewById(R.id.button7);
+        button7.setText("acn.probiviri@gmail.com");
+        Button button8 = findViewById(R.id.button8);
+        button8.setText("acn.soa.iscrizioneeventi@gmail.com");
+        Button button9 = findViewById(R.id.button9);
+        button9.setText("acn.puntimerito@gmail.com");
+        Button button10 = findViewById(R.id.button10);
+        button10.setText("acn.soa.narrazione@gmail.com");
+
+        Button button11 = findViewById(R.id.button11);
+        button11.setText("Coming Soon");
+        button11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Questo bottone non fà ancora niente ma sarà implementato in futuro!", Toast.LENGTH_SHORT).show();
             }
         });
 
