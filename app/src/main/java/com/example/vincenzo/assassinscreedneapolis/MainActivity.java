@@ -1,6 +1,7 @@
 package com.example.vincenzo.assassinscreedneapolis;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        String NomeCognome = prefs.getString("NomeCognome", "null");
+        if(NomeCognome.equals("null")){
+            Intent intent = new Intent(this, DataForm.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(MainActivity.this, "Bentornato "+NomeCognome+"!", Toast.LENGTH_SHORT).show();
+        }
+
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
