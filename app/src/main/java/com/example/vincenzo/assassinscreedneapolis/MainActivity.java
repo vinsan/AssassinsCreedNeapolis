@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +31,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/acneapolis/"));
+                startActivity(i);
+            }
+        });
+        ScrollView scroll = findViewById(R.id.scrollView);
+
+        Button sportello = findViewById(R.id.button);
+        sportello.setText("Sportello Ospiti");
+        sportello.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/317701312079449/"));
+                startActivity(i);
+            }
+        });
+
+        Button gruppo = findViewById(R.id.button2);
+        gruppo.setText("Gruppo Narrazione e Role");
+        gruppo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/1931302960524063/"));
                 startActivity(i);
             }
         });

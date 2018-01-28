@@ -6,13 +6,45 @@
     android:background="@drawable/logocontrasparenza"
     tools:context="com.example.vincenzo.assassinscreedneapolis.MainActivity">
 
-    <ImageView
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:adjustViewBounds="false"
         android:contentDescription="@string/fb"
         android:cropToPadding="false"
-         />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true" />
+
+        <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+             <Button
+                 android:id="@+id/button"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Button" />
+
+             <Button
+                 android:id="@+id/button2"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Button" />
+         </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
