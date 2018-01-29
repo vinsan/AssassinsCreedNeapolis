@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String NomeCognome = prefs.getString("NomeCognome", "null");
         String numeroTessera = prefs.getString("Tessera", "null");
         String npg1 = prefs.getString("pg1", "null");
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if(NomeCognome.equals("null")||cellulare.equals("null")){
             Intent intent = new Intent(this, DataForm.class);
             startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "Bentornato "+ NomeCognome +"!", Toast.LENGTH_SHORT).show();
         }
 
         Display display = getWindowManager().getDefaultDisplay();

@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 import android.view.View;
@@ -22,7 +23,7 @@ public class Email extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
 
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String NomeCognome = prefs.getString("NomeCognome", "null");
         String numeroTessera = prefs.getString("Tessera", "null");
         String npg1 = prefs.getString("pg1", "null");
@@ -55,7 +56,7 @@ public class Email extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Email.this, "Questo bottone non fà ancora niente ma sarà implementato in futuro!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Questo bottone non fà ancora niente ma sarà implementato in futuro!", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -3,7 +3,9 @@ package com.example.vincenzo.assassinscreedneapolis;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,7 +17,7 @@ public class DataForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = prefs.edit();
         String NomeCognome = prefs.getString("NomeCognome", "null");
         String numeroTessera = prefs.getString("Tessera", "null");
@@ -27,49 +29,46 @@ public class DataForm extends AppCompatActivity {
 
         final TextView nc = findViewById(R.id.editText);
         nc.setHint("Nome e Cognome:");
-        //nc.setHintTextColor(Color.BLACK);
+        nc.setInputType(InputType.TYPE_TEXT_VARIATION_PERSON_NAME);
         if(!NomeCognome.equals("null")){
             nc.setText(NomeCognome);
         }
 
         final TextView nt = findViewById(R.id.editText2);
         nt.setHint("Numero tessera:");
-        //nt.setHintTextColor(Color.BLACK);
+        nt.setInputType(InputType.TYPE_CLASS_NUMBER);
         if(!numeroTessera.equals("null")){
             nt.setText(numeroTessera);
         }
 
         final TextView pg1 = findViewById(R.id.editText3);
         pg1.setHint("Nome pg 1:");
-        //pg1.setHintTextColor(Color.BLACK);
         if(!npg1.equals("null")){
             pg1.setText(npg1);
         }
 
         final TextView pg2 = findViewById(R.id.editText4);
         pg2.setHint("Nome pg 2:");
-        //pg2.setHintTextColor(Color.BLACK);
         if(!npg2.equals("null")){
             pg2.setText(npg2);
         }
 
         final TextView pg3 = findViewById(R.id.editText5);
         pg3.setHint("Nome pg 3:");
-        //pg3.setHintTextColor(Color.BLACK);
         if(!npg3.equals("null")){
             pg3.setText(npg3);
         }
 
         final TextView fb = findViewById(R.id.editText6);
         fb.setHint("Indirizzo facebook:");
-        //fb.setHintTextColor(Color.BLACK);
+        fb.setInputType(InputType.TYPE_TEXT_VARIATION_URI);
         if(!facebook.equals("null")){
             fb.setText(facebook);
         }
 
         final TextView cell = findViewById(R.id.editText7);
         cell.setHint("Numero di Cellulare:");
-        //cell.setHintTextColor(Color.BLACK);
+        cell.setInputType(InputType.TYPE_CLASS_PHONE);
         if(!cellulare.equals("null")){
             cell.setText(cellulare);
         }
@@ -96,6 +95,7 @@ public class DataForm extends AppCompatActivity {
                 editor.putString("Cellulare", cellulare);
                 editor.apply();
 
+                Toast.makeText(getApplicationContext(), "Dati salvati con successo!", Toast.LENGTH_SHORT).show();
                 setResult(DataForm.RESULT_OK);
                 finish();
             }
