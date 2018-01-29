@@ -31,13 +31,6 @@ public class Eventi extends AppCompatActivity {
         final String nomeEvento = "Taverna";
         final String dataEvento = "13 Febbraio 2018";
 
-        /*Nome socio: Vincenzo Santoro
-Nome pg: Nessuno
-Tipo di partecipazione: Staff
-Numero tessera:
-Numero cellulare: (il tuo)
-Indirizzo facebook: (il tuo)*/
-
         Button button3 = findViewById(R.id.button3);
         button3.setText("Iscrizione PG");
 
