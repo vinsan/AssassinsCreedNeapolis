@@ -1,27 +1,19 @@
 package com.example.vincenzo.assassinscreedneapolis;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Point;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Display;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
-public class Email extends AppCompatActivity {
+public class Eventi extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email);
+        setContentView(R.layout.activity_eventi);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String NomeCognome = prefs.getString("NomeCognome", "null");
@@ -32,53 +24,32 @@ public class Email extends AppCompatActivity {
         String fb = prefs.getString("Facebook", "null");
         String cellulare = prefs.getString("Cellulare", "null");
         //SharedPreferences.Editor editor = prefs.edit();
+        String mail = "acn.soa.iscrizioneeventi@gmail.com";    //<- TARGET EMAIL
 
         Button button3 = findViewById(R.id.button3);
-        button3.setText("aclracn@gmail.com");
+        button3.setText("Iscrizione PG");
 
         Button button4 = findViewById(R.id.button4);
-        button4.setText("acn.soa@gmail.com");
+        button4.setText("Iscrizione PNG");
 
         Button button5 = findViewById(R.id.button5);
-        button5.setText("acn.soa.background@gmail.com");
+        button5.setText("Iscrizione Staff");
 
         Button button6 = findViewById(R.id.button6);
-        button6.setText("acn.soa.arbitri@gmail.com");
+        button6.setText("Iscrizione Spettatore");
 
         Button button7 = findViewById(R.id.button7);
-        button7.setText("acn.probiviri@gmail.com");
+        button7.setText("Iscrizione PG in Prova");
 
         Button button8 = findViewById(R.id.button8);
-        button8.setText("Iscrizione Eventi");
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Eventi.class);
-                startActivity(intent);
-            }
-        });
-
-        Button button9 = findViewById(R.id.button9);
-        button9.setText("acn.puntimerito@gmail.com");
-
-        Button button10 = findViewById(R.id.button10);
-        button10.setText("acn.soa.narrazione@gmail.com");
-
-        Button button11 = findViewById(R.id.button11);
-        button11.setText("Coming Soon");
-        button11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Questo bottone non fà ancora niente ma sarà implementato in futuro!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        button8.setText("Iscrizione PNG in Prova");
 
         Button button14 = findViewById(R.id.button14);
         button14.setText("Indietro");
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setResult(Email.RESULT_OK);
+                setResult(Eventi.RESULT_OK);
                 finish();
             }
         });
