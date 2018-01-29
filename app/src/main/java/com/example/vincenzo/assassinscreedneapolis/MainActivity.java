@@ -23,13 +23,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
         String NomeCognome = prefs.getString("NomeCognome", "null");
-        if(NomeCognome.equals("null")){
+        String numeroTessera = prefs.getString("Tessera", "null");
+        String npg1 = prefs.getString("pg1", "null");
+        String npg2 = prefs.getString("pg2", "null");
+        String npg3 = prefs.getString("pg3", "null");
+        String fb = prefs.getString("Facebook", "null");
+        String cellulare = prefs.getString("Cellulare", "null");
+        //SharedPreferences.Editor editor = prefs.edit();
+
+        if(NomeCognome.equals("null")||cellulare.equals("null")){
             Intent intent = new Intent(this, DataForm.class);
             startActivity(intent);
-        }else{
-            Toast.makeText(MainActivity.this, "Bentornato "+NomeCognome+"!", Toast.LENGTH_SHORT).show();
         }
 
         Display display = getWindowManager().getDefaultDisplay();
@@ -47,52 +52,35 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        ScrollView scroll = findViewById(R.id.scrollView);
 
-        Button sportello = findViewById(R.id.button);
-        sportello.setText("Sportello Ospiti");
-        sportello.setOnClickListener(new View.OnClickListener() {
+        Button gruppi = findViewById(R.id.button);
+        gruppi.setText("Gruppi");
+        gruppi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/317701312079449/"));
-                startActivity(i);
+                Intent intent = new Intent(getApplicationContext(), Gruppi.class);
+                startActivity(intent);
             }
         });
 
-        Button gruppo = findViewById(R.id.button2);
-        gruppo.setText("Gruppo Narrazione e Role");
-        gruppo.setOnClickListener(new View.OnClickListener() {
+        Button button15 = findViewById(R.id.button15);
+        button15.setText("Mail Associative");
+        button15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/1931302960524063/"));
-                startActivity(i);
+                Intent intent = new Intent(getApplicationContext(), Email.class);
+                startActivity(intent);
             }
         });
 
-        Button button3 = findViewById(R.id.button3);
-        button3.setText("aclracn@gmail.com");
 
-        Button button4 = findViewById(R.id.button4);
-        button4.setText("acn.soa@gmail.com");
-        Button button5 = findViewById(R.id.button5);
-        button5.setText("acn.soa.background@gmail.com");
-        Button button6 = findViewById(R.id.button6);
-        button6.setText("acn.soa.arbitri@gmail.com");
-        Button button7 = findViewById(R.id.button7);
-        button7.setText("acn.probiviri@gmail.com");
-        Button button8 = findViewById(R.id.button8);
-        button8.setText("acn.soa.iscrizioneeventi@gmail.com");
-        Button button9 = findViewById(R.id.button9);
-        button9.setText("acn.puntimerito@gmail.com");
-        Button button10 = findViewById(R.id.button10);
-        button10.setText("acn.soa.narrazione@gmail.com");
-
-        Button button11 = findViewById(R.id.button11);
-        button11.setText("Coming Soon");
-        button11.setOnClickListener(new View.OnClickListener() {
+        Button button13 = findViewById(R.id.button13);
+        button13.setText("Modifica Dati");
+        button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Questo bottone non fà ancora niente ma sarà implementato in futuro!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), DataForm.class);
+                startActivity(intent);
             }
         });
 
