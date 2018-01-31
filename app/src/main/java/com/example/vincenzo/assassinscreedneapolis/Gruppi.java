@@ -35,7 +35,7 @@ public class Gruppi extends AppCompatActivity {
         gruppo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/1931302960524063/"));
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/aclracn/"));
                 startActivity(i);
             }
         });
